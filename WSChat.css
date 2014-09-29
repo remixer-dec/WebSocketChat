@@ -1,0 +1,125 @@
+            .WSChat{
+                position: relative;
+                -webkit-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.55);
+                -moz-box-shadow:    0px 0px 7px 1px rgba(0, 0, 0, 0.55);
+                box-shadow:   0px 0px 7px 1px rgba(0, 0, 0, .55);
+                -webkit-user-select: none;  /* Chrome all / Safari all */
+                -moz-user-select: none;     /* Firefox all */
+                -ms-user-select: none;      /* IE 10+ */
+                cursor: default;
+                background: #444;
+                color: white;
+                border-radius: 6px 6px;
+                text-align: center;
+                width: 300px;
+                height: 400px;
+                margin: 0 auto;
+                font-size: 23px;
+                line-height: 40px;
+                transition: .9s;
+                }
+            .WSChat:hover{
+                background: #666;
+            }
+            .WSChat:active{
+                text-shadow: 0 0 1px #999, 0 -192px 24px #fff, 0 192px 24px #fff;
+            }
+            .WSChat .msgsbox{
+                padding-top: 2px;
+                background: #777;
+                width: 290px;
+                border-radius: 4px 4px;
+                height: 324px;
+                margin: 1px auto;
+                overflow: hidden;
+            }
+            .WSChat input[type=text]{
+                background: #777;
+                border: 1px solid #555;
+                width: 240px;
+                border-radius: 20px 20px;
+                color: white;
+                text-align: center;
+                height:16px;
+            }
+            .WSChat .controls{
+                padding: 0px 4px;
+                position: absolute;
+                bottom: 0;
+                width:300px;
+            }
+            .WSChat input[type=submit]{
+                background: #777 url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAnUlEQVRIS83V0Q1AMBSFYXcCNmEEozAZIxjFCDap08STBz3n0ISkb/xfK2luNJWfqNxvikBKacAmhohYnc08Aoh3iB5YLdbsIMwJJsSXa/cyUgRyGCexEQp4g9CAi0iAg8iAiliAgtgAi/wXYO+GdQI2nn+jDChxGVDjEuDEacCNU8CbOAvseLGvOXDyVBsxzbbPR6YTvH8j3wMVPQHjy2IZD70Y3wAAAABJRU5ErkJggg== ) no-repeat center center;
+                background-size:85%;
+                border: 1px solid #555;
+                width: 20px;
+                border-radius: 20px 20px;
+                color: white;
+                text-align: center;            
+                height:20px;
+                vertical-align:center;
+            }
+            .WSChat #status{
+                background: white;
+                width:10px;
+                height: 10px;
+                position: absolute;
+                right:10px;
+                top:16px;
+                border-radius: 4px 4px;
+            }
+            .WSChat .msge{
+                background: #555;
+                border-radius: 4px 4px;
+                width: 270px;
+                height: auto;
+                margin: 2px auto;
+                color: white;
+                line-height: 30px;
+                font-size:12px;
+                transition: all .4s;
+                opacity: 1;
+                position:relative
+            }
+            .WSChat .msgf{
+                height: 0;
+                opacity: 0;
+                color:#777;
+            }
+            .WSChat .msge p{
+                    position:absolute;
+                    left:2px;
+                    top:-6px;
+                    font-size:8px;
+                    line-height:10px;
+                    padding: 0 2px;
+                    color:rgba(255,255,255,.3)
+            }
+            .WSChat .me{
+                    border: 10px solid transparent;
+                    border-left: 11px solid #666;
+                    position:absolute;
+                    right:-20px;
+                    top:5px;
+            }
+            .WSChat .notme{
+                    border: 10px solid transparent;
+                    border-right: 11px solid #555;
+                    position:absolute;
+                    left:-20px;
+                    top:5px;
+                    }
+            .WSChat .righty{
+                    right:2px;
+                    text-align:right;
+                    }
+            .WSChat a{
+                color:white;
+                text-decoration: none;
+                text-shadow: 0px -1px 6px rgba(255, 255, 255, 1);
+                transition: all .2s;
+            }
+           .WSChat a:hover, .WSChat a:active{
+                text-shadow: 0px 1px 15px rgba(255, 255, 0, 1);
+            }
+            
