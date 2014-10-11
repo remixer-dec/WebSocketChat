@@ -7,6 +7,7 @@ var Chat = {
     ws:undefined,
     ms:0,
     me:'',
+    ping:false,
     start:function(){
     window.addEventListener("unload", function(e) {
     	Chat.ws.send(Chat.nick+" was disconnected from the server");
@@ -52,6 +53,8 @@ var Chat = {
         found[2].match(/:bigdog:/gi) ? found[2]=found[2].replace(/:bigdog:/gi,"<img style='vertical-align:middle' src='https://fbexternal-a.akamaihd.net/safe_image.php?d=AQDDuQNYWnqctfwI&w=155&h=114&url=http%3A%2F%2Fwww.nattstad.se%2Fjavascript%2Fimg%2Fd83ddc36.png'>") : false;
         found[2].match(/:doge:/gi) ? found[2]=found[2].replace(/:doge:/gi,"<img style='vertical-align:middle' src='http://www.mnx.ro/forum/public/style_emoticons/default/doge.png'>") : false;
         found[2].match(/:yoba:/gi) ? found[2]=found[2].replace(/:yoba:/gi,"<img style='vertical-align:middle' width='20px' height='20px' src='http://rusut.ru/memesmiles/yoba.gif'>") : false;
+        found[2].match(/\/ping/gi) ? (Chat.ping!=false?Chat.sendM(new Date().getTime()-Chat.ping+"ms"):false):false;
+        
         }
         found!=false? document.getElementById('mbx').innerHTML+=(found[1]==Chat.nick?"<div  style='background:#666' class='msgf'><p class=righty>"+found[1]+"</p>"+found[2]+"<span class=me></span>":"<div class='msgf'><p>"+found[1]+"</p>"+found[2]+"<span class=notme></span>")+"</div>" :  document.getElementById('mbx').innerHTML+="<div class='msgf' style='background:#777;height:20px;line-height:20px;color:#bbb;'>"+e.data+"</div>";
             if (document.getElementsByClassName('msge').length>9) {
@@ -91,6 +94,7 @@ var Chat = {
     	else Chat.getNN()
     },
     sendM:function(message) {
+    	message!="/ping"?true:Chat.ping=new Date().getTime();
     	message!=""&&message!=" " ? (function(){
     	    	   Chat.ws.send("###"+Chat.nick+"###"+message);
         document.getElementById('msg').value="";
